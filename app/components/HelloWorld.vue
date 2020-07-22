@@ -38,6 +38,11 @@
                 <Label class="m-10 text" v-if="showWelcome" text="and upload it using"
                     textWrap="true"></Label>
                 <Label class="m-10 text plugin" text="nativescript-background-http"></Label>
+                
+                <Label class="m-10 text" v-if="showWelcome" text="This sample app shows how to pick an image with"
+                    textWrap="true"></Label>
+                <Label class="m-10 text" v-if="showWelcome" text="This sample app shows how to pick an image with"
+                    textWrap="true"></Label>
             </StackLayout>
             <Button class="m-b-10 m-t-10 t-20" row="1" text="Choose image to upload" @tap="onSelectImageTap($event)"></Button>
         </GridLayout>
@@ -89,6 +94,19 @@
                     mode: "single"
                 });
                 this.startSelection(context);
+            },
+            generateKeypair() {
+                (async () => {
+                    const { privateKeyArmored, publicKeyArmored, revocationCertificate } = await openpgp.generateKey({
+                        userIds: [{ name: 'Jon Smith', email: 'jon@example.com' }], // you can pass multiple user IDs
+                        curve: 'ed25519',                                           // ECC curve name
+                        passphrase: 'super long and hard to guess secret'           // protects the private key
+                    });
+
+                    console.log(privateKeyArmored);     // '-----BEGIN PGP PRIVATE KEY BLOCK ... '
+                    console.log(publicKeyArmored);      // '-----BEGIN PGP PUBLIC KEY BLOCK ... '
+                    console.log(revocationCertificate); // '-----BEGIN PGP PUBLIC KEY BLOCK ... '
+                })();
             },
             startSelection(context) {
                 context

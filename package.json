@@ -20,8 +20,8 @@
         "nativescript-accelerometer": "3.0.0",
         "nativescript-background-http": "4.2.1",
         "nativescript-camera": "4.5.0",
-        "nativescript-image": "3.0.1",
         "nativescript-geolocation": "5.1.0",
+        "nativescript-image": "3.0.1",
         "nativescript-imagepicker": "7.1.0",
         "nativescript-intl": "3.0.0",
         "nativescript-iqkeyboardmanager": "1.5.1",
@@ -35,6 +35,7 @@
         "nativescript-ui-listview": "8.0.1",
         "nativescript-ui-sidedrawer": "8.0.0",
         "nativescript-vue": "2.5.0",
+        "openpgp": "^4.10.7",
         "tns-core-modules": "6.5.0"
     },
     "devDependencies": {
